@@ -11,5 +11,5 @@ module.exports = {
   dist: resolveApp("dist"),
   src: resolveApp("src"),
   babelrc: resolveApp(".babelrc"),
-  babelPreset: require.resolve("babel-preset-cosmo")
+  defaultBabelConfig: require.resolve("babel-preset-cosmo")
 };

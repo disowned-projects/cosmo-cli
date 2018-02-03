@@ -26,7 +26,7 @@ const build = argv => {
   args.push(paths.src);
   args.push("-d", paths.dist);
   useDefaultConfig
-    ? args.push("--presets", paths.babelPreset)
+    ? args.push("--presets", paths.defaultBabelConfig)
     : console.log(chalk.green("Using .babelrc from project root for config"));
 
   const result = spawn.sync(require.resolve("@babel/cli/bin/babel"), args, {
