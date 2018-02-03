@@ -17,6 +17,7 @@
     "chalk": "^2.3.0",
     "cross-spawn": "^6.0.4",
     "nodemon": "^1.14.12",
+    "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
     "yargs": "^11.0.0"
   }

@@ -11,5 +11,7 @@ module.exports = {
   dist: resolveApp("dist"),
   src: resolveApp("src"),
   babelrc: resolveApp(".babelrc"),
-  defaultBabelConfig: require.resolve("babel-preset-cosmo")
+  defaultBabelConfig: require.resolve("babel-preset-cosmo"),
+  prettierrc: resolveApp(".prettierrc"),
+  defaultPrettierConfig: require.resolve("../config/.prettierrc.js")
 };

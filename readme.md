@@ -82,7 +82,7 @@ Remember to install necessary packages.
 $ yarn add --dev babel-preset-cosmo babel-plugin-transform-decorators-legacy @babel/core
 ```
 
-### start ❌
+### start ✅
 
 Start the development environment. It runs `src/index.js` and watches for
 changes. It re-runs automatically on source change. `babel` rules for `build`
@@ -106,18 +106,17 @@ Options: <br>
 `--no-watch`: Specify to never start tests in watch mode<br>
 `--coverage`: Get your code coverage
 
-### format ❌
+### format ✅
 
 Format your project using `prettier`. By default, following prettier options
 are set:
-`--no-semi`, `--single-quote`, `--trailing-comma all`
+`--no-semi`, `--single-quote`, `--trailing-comma es5`
 
-You can add a `.prettierrc` or `prettier` field in `package.json` to provide
-your own config.
+You can create a `.prettierrc` to provide your own config.
 
 Options:<br>
-`—-files`: Files to run prettier on. By default, all `.js` files inside `src/`
-will be formatted.<br>
+`—-files`: Files to run prettier on. By default, all `.js` files inside `src/` and `flow-typed/` will be formatted.<br>
+`--no-config`: Use prettier without any config
 
 ### lint ❌
 
