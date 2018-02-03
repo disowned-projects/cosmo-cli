@@ -21,7 +21,7 @@ const start = argv => {
   const args = [require.resolve("@babel/node/bin/babel-node")];
 
   useDefaultConfig
-    ? args.push("--presets", require.resolve("babel-preset-cosmo"))
+    ? args.push("--presets", paths.babelPreset)
     : console.log(chalk.green("Using .babelrc from project root for config"));
 
   nodemon({
