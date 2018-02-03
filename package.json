@@ -1,0 +1,12 @@
+{
+  "name": "cosmo-cli",
+  "version": "0.1.0",
+  "description": "Qucik Javascript Tooling",
+  "main": "src/index.js",
+  "bin": {
+    "cosmo": "./src/index.js"
+  },
+  "repository": "https://github.com/doshisid/cosmo-cli",
+  "author": "Siddharth Doshi <sidoshi510@gmail.com> (https://sid.sh/)",
+  "license": "MIT"
+}
