@@ -88,23 +88,25 @@ Start the development environment. It runs `src/index.js` and watches for
 changes. It re-runs automatically on source change. `babel` rules for `build`
 command apply here as well.
 
-### test ❌
+### test ✅
 
 Test the project using `jest`. Jest will look for files that match these
-conventions:
+conventions inside `src/`:
 
 * Files ending with `.test.js`.
 * Files ending with `.spec.js`.
 * `.js` files in `__tests__` folders.
 
-There is a `jest` field inside `package.json` which specifies the default jest
-config. If you like, you can change it to suit your needs.
+If `jestConfig.js` is found in your project root, it will be used instead of
+default config
 
 Unless you are in `CI`, your tests will run in interactive watch mode.
 
 Options: <br>
-`--no-watch`: Specify to never start tests in watch mode<br>
-`--coverage`: Get your code coverage
+`--noWatch`: Specify to never start tests in watch mode<br>
+`--coverage`: Get your code coverage<br>
+`--ci`: Run tests in CI environment<br>
+`--notify`: Show notifications on test
 
 ### format ✅
 
@@ -116,7 +118,7 @@ You can create a `.prettierrc` to provide your own config.
 
 Options:<br>
 `—-files`: Files to run prettier on. By default, all `.js` files inside `src/` and `flow-typed/` will be formatted.<br>
-`--no-config`: Use prettier without any config
+`--noConfig`: Use prettier without any config
 
 ### lint ❌
 

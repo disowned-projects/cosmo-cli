@@ -12,7 +12,7 @@ exports.builder = yargs =>
       default: "src/**/*.js flow-typed/**/*.js"
     },
     n: {
-      alias: "no-config",
+      alias: "noConfig",
       describe: "Use prettier without config"
     }
   });
