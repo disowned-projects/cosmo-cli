@@ -1,24 +1,24 @@
-const test = require("../scripts/test");
+const test = require('../scripts/test')
 
-exports.command = "test";
+exports.command = 'test'
 
-exports.description = "Run tests using Jest";
+exports.description = 'Run tests using Jest'
 
 exports.builder = yargs =>
   yargs.options({
     noWatch: {
-      describe: "Dont run tests on watch mode"
+      describe: 'Dont run tests on watch mode',
     },
     coverage: {
-      describe: "Get code coverage",
-      default: false
+      describe: 'Get code coverage',
+      default: false,
     },
     ci: {
-      describe: "Run tests in CI mode",
-      default: false
-    }
-  });
+      describe: 'Run tests in CI mode',
+      default: false,
+    },
+  })
 
 exports.handler = argv => {
-  test(argv);
-};
+  test(argv)
+}

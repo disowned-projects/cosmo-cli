@@ -1,15 +1,13 @@
 #!/usr/bin/env node
 
-const yargs = require("yargs");
-const chalk = require("chalk");
+const yargs = require('yargs')
+const chalk = require('chalk')
 
 yargs
   .version()
-  .alias("v", "version")
-  .alias("h", "help");
+  .alias('v', 'version')
+  .alias('h', 'help')
 
-yargs
-  .commandDir("cmd")
-  .demandCommand(1, chalk.red("Please provide a command!"));
+yargs.commandDir('cmd').demandCommand(1, chalk.red('Please provide a command!'))
 
-yargs.parse();
+yargs.parse()
