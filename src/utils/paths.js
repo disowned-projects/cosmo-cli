@@ -15,5 +15,7 @@ module.exports = {
   prettierrc: resolveApp(".prettierrc"),
   defaultPrettierConfig: require.resolve("../config/.prettierrc.js"),
   jestConfig: resolveApp("jestConfig.js"),
-  defaultJestConfig: require.resolve("../config/jest.js")
+  defaultJestConfig: require.resolve("../config/jest.js"),
+  eslintrc: resolveApp(".eslintrc.js"),
+  defaultEslintConfig: require.resolve("eslint-config-cosmo")
 };

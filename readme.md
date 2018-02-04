@@ -120,10 +120,10 @@ Options:<br>
 `—-files`: Files to run prettier on. By default, all `.js` files inside `src/` and `flow-typed/` will be formatted.<br>
 `--noConfig`: Use prettier without any config
 
-### lint ❌
+### lint ✅
 
 Lint using `eslint`. By default `eslint-config-cosmo` is used. If you want to
-extend or override the rules, add `.eslintrc` to your project root.
+extend or override the rules, add `.eslintrc.js` to your project root.
 
 Options:<br>
 `—-files`: Files to run eslint on. By default, all `.js` files inside `src/`
