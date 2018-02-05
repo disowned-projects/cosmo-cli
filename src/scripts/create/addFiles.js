@@ -100,7 +100,7 @@ test('Should add as expected', () => {
 })
 `
 
-const readme = (name, appName) => `# ${appName}
+const readme = (userData, appName) => `# ${appName}
 
 > Description
 
@@ -119,18 +119,13 @@ const ${appName} = require('${appName}')
 
 ## License
 
-MIT © ${name}`
+MIT © ${
+  userData.authorUrl
+    ? `[${userData.authorName}](${userData.authorUrl})`
+    : userData.authorName
+}`
 
-const nextSteps = `
-Bellow is a list of recommended (not required) steps to take next.
-
-1) Add email and url to author field in package.json
-2) Add keywords to package.json
-3) Add your url to Licence section in readme.md
-4) Add repo url to package.json
-`
-
-const addFiles = (rootDir, appName, authorName) => {
+const addFiles = (rootDir, appName, userData) => {
   console.log(`Adding project files`)
   const originDir = process.cwd()
   process.chdir(rootDir)
@@ -138,11 +133,10 @@ const addFiles = (rootDir, appName, authorName) => {
   fs.ensureFileSync(path.join(rootDir, 'src/index.js'))
   fs.writeFileSync(path.join(rootDir, 'src/index.js'), indexJs)
   fs.writeFileSync(path.join(rootDir, 'src/index.test.js'), indexTest)
-  fs.writeFileSync(path.join(rootDir, 'LICENCE'), licence(authorName))
+  fs.writeFileSync(path.join(rootDir, 'LICENCE'), licence(userData.authorName))
   fs.writeFileSync(path.join(rootDir, '.gitignore'), gitignore)
-  fs.writeFileSync(path.join(rootDir, 'readme.md'), readme(authorName, appName))
+  fs.writeFileSync(path.join(rootDir, 'readme.md'), readme(userData, appName))
   console.log(chalk.green('✅  Sucessfully Added files'))
-  console.log(chalk.green(nextSteps))
 
   process.chdir(originDir)
 }

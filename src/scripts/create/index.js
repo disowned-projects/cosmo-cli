@@ -1,13 +1,13 @@
 const path = require('path')
 const fs = require('fs-extra')
 const chalk = require('chalk')
-const fullname = require('fullname')
 const validateProjectName = require('validate-npm-package-name')
 const spawn = require('cross-spawn')
 
 const packageJsonBuilder = require('./package')
 const { installDependencies } = require('./installDependencies')
 const addFiles = require('./addFiles')
+const promptData = require('./promptData')
 
 const SUPPORTED_NODE_VERSION = 8
 
@@ -83,11 +83,12 @@ const createPackageJson = (data, rootDir) => {
 const create = async argv => {
   const rootDir = path.resolve(argv.projectPath)
   const appName = path.basename(rootDir)
-  const authorName = await fullname()
+
+  const userData = await promptData(rootDir, appName)
 
   const packageJsonData = {
     name: appName,
-    authorName,
+    ...userData,
   }
 
   ensureSupportedNodeVersion()
@@ -96,7 +97,7 @@ const create = async argv => {
   initGit(rootDir)
   createPackageJson(packageJsonData, rootDir)
   installDependencies(rootDir, dependencies, devDependencies)
-  addFiles(rootDir, appName, authorName)
+  addFiles(rootDir, appName, userData)
 }
 
 module.exports = create
