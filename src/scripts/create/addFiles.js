@@ -128,7 +128,6 @@ Bellow is a list of recommended (not required) steps to take next.
 2) Add keywords to package.json
 3) Add your url to Licence section in readme.md
 4) Add repo url to package.json
-5) Add "prepublish": "npm run build" to package.json scripts
 `
 
 const addFiles = (rootDir, appName, authorName) => {

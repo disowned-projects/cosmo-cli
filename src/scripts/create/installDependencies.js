@@ -9,7 +9,8 @@ const shouldUseYarn = () => {
   return true
 }
 
-const shiftDevDependencies = (packagePath, devDependencies) => {
+// Shift devDependencies and add prepublish script
+const setupPostInstall = (packagePath, devDependencies) => {
   const packageWithDeps = JSON.parse(fs.readFileSync(packagePath).toString())
 
   packageWithDeps.devDependencies = packageWithDeps.devDependencies || {}
@@ -19,6 +20,8 @@ const shiftDevDependencies = (packagePath, devDependencies) => {
     delete packageWithDeps.dependencies[dep]
     packageWithDeps.devDependencies[dep] = version
   })
+
+  packageWithDeps.scripts.prepublish = 'npm run build'
 
   fs.writeFileSync(packagePath, JSON.stringify(packageWithDeps, null, 2))
 }
@@ -44,7 +47,7 @@ const installDependencies = (rootDir, dependencies, devDependencies) => {
     process.exit(1)
   }
 
-  shiftDevDependencies(path.join(rootDir, 'package.json'), devDependencies)
+  setupPostInstall(path.join(rootDir, 'package.json'), devDependencies)
 
   process.chdir(originDir)
 }
