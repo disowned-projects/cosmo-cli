@@ -36,7 +36,7 @@ $ cosmo <command> [options]
 
 ## Commands
 
-### create ❌
+### create ✅
 
 Create a new project. Initialize git, setup package.json, add default config
 and install dependencies
@@ -47,6 +47,7 @@ Directory Structure:
 node_modules/
 src/
   index.js
+  index.test.js
 package.json
 yarn.lock
 readme.md

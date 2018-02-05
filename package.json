@@ -26,10 +26,13 @@
     "eslint-plugin-flowtype": "^2.42.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-prettier": "^2.6.0",
+    "fs-extra": "^5.0.0",
+    "fullname": "^3.3.0",
     "jest": "^22.1.4",
     "nodemon": "^1.14.12",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
+    "validate-npm-package-name": "^3.0.0",
     "yargs": "^11.0.0"
   }
 }
