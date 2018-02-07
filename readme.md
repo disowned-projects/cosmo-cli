@@ -5,7 +5,7 @@ efficient and enjoyable. There are a lot of great tools available in Javascript
 ecosystem that can help you along the way, making things easy for you.
 But setting up all those tools for each new project can be time consuming and
 boring if not difficult.
-<br>
+</br>
 `cosmo` helps you get around these tools easily without getting in your way.
 It works as a proxy between tools and provides a sensible default configuration.
 So zero configuration Is required at your end. But it does expect you to be
@@ -31,7 +31,19 @@ familiar with supported tools.
 ## Usage
 
 ```bash
-$ cosmo <command> [options]
+$ cosmo <command>
+
+Commands:
+  cosmo build                 Build the project
+  cosmo create <projectPath>  Create a new project
+  cosmo format                Format files using Prettier
+  cosmo lint                  Code analysis using Eslint
+  cosmo start                 Start the development environment
+  cosmo test                  Run tests using Jest
+
+Options:
+  -v, --version  Show version number                                   [boolean]
+  -h, --help     Show help                                             [boolean]
 ```
 
 ## Commands
@@ -43,7 +55,7 @@ and install dependencies
 
 Directory Structure:
 
-```
+```bash
 node_modules/
 src/
   index.js
@@ -80,7 +92,7 @@ and setup `.babelrc` like this:
 Remember to install necessary packages.
 
 ```bash
-$ yarn add --dev babel-preset-cosmo babel-plugin-transform-decorators-legacy @babel/core
+yarn add --dev babel-preset-cosmo babel-plugin-transform-decorators-legacy @babel/core
 ```
 
 ### start ✅
@@ -103,10 +115,10 @@ default config
 
 Unless you are in `CI`, your tests will run in interactive watch mode.
 
-Options: <br>
-`--noWatch`: Specify to never start tests in watch mode<br>
-`--coverage`: Get your code coverage<br>
-`--ci`: Run tests in CI environment<br>
+Options: </br>
+`--noWatch`: Specify to never start tests in watch mode</br>
+`--coverage`: Get your code coverage</br>
+`--ci`: Run tests in CI environment</br>
 `--notify`: Show notifications on test
 
 ### format ✅
@@ -117,8 +129,8 @@ are set:
 
 You can create a `.prettierrc` to provide your own config.
 
-Options:<br>
-`—-files`: Files to run prettier on. By default, all `.js` files inside `src/` and `flow-typed/` will be formatted.<br>
+Options:</br>
+`—-files`: Files to run prettier on. By default, all `.js` files inside `src/` and `flow-typed/` will be formatted.</br>
 `--noConfig`: Use prettier without any config
 
 ### lint ✅
@@ -126,9 +138,9 @@ Options:<br>
 Lint using `eslint`. By default `eslint-config-cosmo` is used. If you want to
 extend or override the rules, add `.eslintrc.js` to your project root.
 
-Options:<br>
+Options:</br>
 `—-files`: Files to run eslint on. By default, all `.js` files inside `src/`
-will be selected.<br>
+will be selected.</br>
 
 ### flow ✅
 
