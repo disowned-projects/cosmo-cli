@@ -130,6 +130,22 @@ Options:<br>
 `—-files`: Files to run eslint on. By default, all `.js` files inside `src/`
 will be selected.<br>
 
+### flow ✅
+
+Typecheck your code using flow. Flow is installed directly as devDependency.
+So instead of running `cosmo flow`, run `yarn flow`.
+`cosmo` also installs `flow_typed` for you. So you can install libdefs for libraries by running `yarn flowtyped`.
+
+Examples:
+
+```bash
+yarn flow
+```
+
+```bash
+yarn flowtyped install lodash@4.17.5
+```
+
 ### precommit ❌
 
 Run precommit hooks. Before every commit, `format` and `lint` commands are run

@@ -12,7 +12,7 @@ const promptData = require('./promptData')
 const SUPPORTED_NODE_VERSION = 8
 
 const dependencies = ['@babel/runtime']
-const devDependencies = ['cosmo-cli']
+const devDependencies = ['cosmo-cli', 'flow-bin', 'flow-typed']
 
 const ensureSupportedNodeVersion = () => {
   console.log(`Ensuring node verison is greater than ${SUPPORTED_NODE_VERSION}`)

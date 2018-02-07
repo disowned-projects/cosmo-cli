@@ -13,6 +13,8 @@ module.exports = data => {
       start: 'cosmo start',
       format: 'cosmo format',
       lint: 'cosmo lint',
+      flow: 'flow',
+      flowtyped: 'flow-typed',
     },
   }
 

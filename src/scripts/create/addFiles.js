@@ -125,6 +125,26 @@ MIT © ${
     : userData.authorName
 }`
 
+const flowConfig = `[include]
+src
+
+[ignore]
+.*/node_modules/.*
+.*.test.js
+.*/__tests__/.*
+.*/tests/.*
+.*/coverage/.*
+.*/dist/.*
+.*/.vscode/.*
+
+[libs]
+flow-typed
+
+[options]
+all=true
+emoji=true
+`
+
 const addFiles = (rootDir, appName, userData) => {
   console.log(`Adding project files`)
   const originDir = process.cwd()
@@ -136,6 +156,7 @@ const addFiles = (rootDir, appName, userData) => {
   fs.writeFileSync(path.join(rootDir, 'LICENCE'), licence(userData.authorName))
   fs.writeFileSync(path.join(rootDir, '.gitignore'), gitignore)
   fs.writeFileSync(path.join(rootDir, 'readme.md'), readme(userData, appName))
+  fs.writeFileSync(path.join(rootDir, '.flowconfig'), flowConfig)
   console.log(chalk.green('✅  Sucessfully Added files'))
 
   process.chdir(originDir)
