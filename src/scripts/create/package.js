@@ -15,6 +15,10 @@ module.exports = data => {
       lint: 'cosmo lint',
       flow: 'flow',
       flowtyped: 'flow-typed',
+      precommit: 'lint-staged',
+    },
+    'lint-staged': {
+      '*.js': ['cosmo format -f', 'git add'],
     },
   }
 

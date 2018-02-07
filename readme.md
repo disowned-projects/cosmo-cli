@@ -158,8 +158,8 @@ yarn flow
 yarn flowtyped install lodash@4.17.5
 ```
 
-### precommit ❌
+### precommit ✅
 
-Run precommit hooks. Before every commit, `format` and `lint` commands are run
+Run precommit hooks. Before every commit, `format` command is run
 on the staged files. This way you never commit bad code. To add more commands,
-change `precommit` script in `package.json`
+modify `lint-satged` field in package.json.
