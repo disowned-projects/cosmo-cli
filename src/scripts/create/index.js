@@ -8,12 +8,15 @@ const packageJsonBuilder = require('./package')
 const { installDependencies } = require('./installDependencies')
 const addFiles = require('./addFiles')
 const promptData = require('./promptData')
+const paths = require('../../utils/paths')
+
+const version = require(paths.packageJson).version
 
 const SUPPORTED_NODE_VERSION = 8
 
 const dependencies = ['@babel/runtime']
 const devDependencies = [
-  'cosmo-cli',
+  `cosmo-cli@${version}`,
   'flow-bin',
   'flow-typed',
   'husky',

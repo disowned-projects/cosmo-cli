@@ -7,6 +7,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 module.exports = {
   resolveApp,
 
+  packageJson: require.resolve('../../package.json'),
   appDirectory: resolveApp('.'),
   dist: resolveApp('dist'),
   src: resolveApp('src'),
