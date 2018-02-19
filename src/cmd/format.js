@@ -1,4 +1,5 @@
 const format = require('../scripts/format')
+const createHandler = require('../utils/createHandler')
 
 exports.command = 'format'
 
@@ -17,7 +18,7 @@ exports.builder = yargs =>
     },
   })
 
-exports.handler = argv => {
+exports.handler = createHandler(argv => {
   const result = format(argv)
   process.exit(result.status)
-}
+})

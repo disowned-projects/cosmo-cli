@@ -1,4 +1,5 @@
 const test = require('../scripts/test')
+const createHandler = require('../utils/createHandler')
 
 exports.command = 'test'
 
@@ -19,6 +20,6 @@ exports.builder = yargs =>
     },
   })
 
-exports.handler = argv => {
+exports.handler = createHandler(argv => {
   test(argv)
-}
+})

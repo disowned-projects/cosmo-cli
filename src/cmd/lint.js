@@ -1,4 +1,5 @@
 const lint = require('../scripts/lint')
+const createHandler = require('../utils/createHandler')
 
 exports.command = 'lint'
 
@@ -13,7 +14,7 @@ exports.builder = yargs =>
     },
   })
 
-exports.handler = argv => {
+exports.handler = createHandler(argv => {
   const result = lint(argv)
   process.exit(result.status)
-}
+})

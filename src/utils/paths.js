@@ -8,6 +8,7 @@ module.exports = {
   resolveApp,
 
   packageJson: require.resolve('../../package.json'),
+  localCosmo: resolveApp('node_modules/.bin/cosmo'),
   appDirectory: resolveApp('.'),
   dist: resolveApp('dist'),
   src: resolveApp('src'),
