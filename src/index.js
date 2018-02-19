@@ -8,6 +8,10 @@ yargs
   .alias('v', 'version')
   .alias('h', 'help')
 
-yargs.commandDir('cmd').demandCommand(1, chalk.red('Please provide a command!'))
+yargs
+  .commandDir('cmd')
+  .demandCommand(1, chalk.red('Please provide a command!'))
+  .strict()
+  .help()
 
 yargs.parse()
