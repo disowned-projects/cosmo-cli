@@ -68,6 +68,9 @@ LICENCE
 .gitignore
 ```
 
+Options: </br>
+`-s, --skipQuestions`: Skip questions for user data</br>
+
 ### build ✅
 
 Builds your project. Compiles javascript code in `src/` using `Babel`

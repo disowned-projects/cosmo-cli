@@ -93,7 +93,7 @@ const create = async argv => {
   const rootDir = path.resolve(argv.projectPath)
   const appName = path.basename(rootDir)
 
-  const userData = await promptData(rootDir, appName)
+  const userData = argv.skipQuestions ? {} : await promptData(rootDir, appName)
 
   const packageJsonData = {
     name: appName,

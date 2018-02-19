@@ -4,9 +4,6 @@ module.exports = data => {
     version: '1.0.0',
     main: 'dist/index.js',
     license: 'MIT',
-    author: {
-      name: data.authorName,
-    },
     scripts: {
       build: 'cosmo build',
       test: 'cosmo test',
@@ -22,6 +19,9 @@ module.exports = data => {
     },
   }
 
+  if (data.authorEmail || data.authorUrl) {
+    packageJson.author = {}
+  }
   if (data.authorEmail) {
     packageJson.author.email = data.authorEmail
   }
