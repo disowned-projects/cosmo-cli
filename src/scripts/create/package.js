@@ -18,7 +18,7 @@ module.exports = data => {
       precommit: 'lint-staged',
     },
     'lint-staged': {
-      '*.js': ['cosmo format -f', 'git add'],
+      '*.js': ['cosmo format -f', 'cosmo lint -f', 'git add'],
     },
   }
 
