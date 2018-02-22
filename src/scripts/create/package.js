@@ -19,13 +19,15 @@ module.exports = data => {
     },
   }
 
-  if (data.authorEmail || data.authorUrl) {
+  if (data.authorEmail || data.authorUrl || data.authorName) {
     packageJson.author = {}
+  }
+  if (data.authorName) {
+    packageJson.author.name = data.authorName
   }
   if (data.authorEmail) {
     packageJson.author.email = data.authorEmail
   }
-
   if (data.authorUrl) {
     packageJson.author.url = data.authorUrl
   }

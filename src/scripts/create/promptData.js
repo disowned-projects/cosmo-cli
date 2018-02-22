@@ -1,8 +1,15 @@
 const fullname = require('fullname')
 const inquirer = require('inquirer')
 
-const promptData = async (rootDir, appName) => {
+const promptData = async (rootDir, appName, skipQuestions) => {
   const name = await fullname()
+
+  if (skipQuestions) {
+    return {
+      authorName: name,
+    }
+  }
+
   const questions = []
   questions.push({
     name: 'githubUsername',
