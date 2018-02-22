@@ -7,9 +7,11 @@ const chalk = require('chalk')
 
 const paths = require('../utils/paths')
 
+const developingCli = process.env.COSMO_DEVELOPMENT
+
 const createHandler = (
   fn,
-  shouldUseLocalCli = fs.existsSync(paths.localCosmo)
+  shouldUseLocalCli = fs.existsSync(paths.localCosmo) && !developingCli
 ) => {
   // If we are not using the local cli and we are asked to use it,
   // we call the command on local cli.

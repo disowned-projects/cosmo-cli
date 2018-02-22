@@ -167,6 +167,13 @@ Run precommit hooks. Before every commit, `format` and `lint` commands are run
 on the staged files. This way you never commit bad code. To add/remove more
 commands, modify `lint-satged` field in package.json.
 
+## Contributing
+
+Clone the project and install dependencies.
+Run `npm link` to make the cli accesible as you make changes.
+By default the global cli tries to use the local cli when possible. But while
+developing we dont want that. So set env variable `COSMO_DEVELOPMENT` to `true`.
+
 ## License
 
 MIT © [Siddharth Doshi](https://sid.sh)
