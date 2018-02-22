@@ -13,7 +13,6 @@ familiar with supported tools.
 
 > Currently, It only supports building NodeJs Libraries. Browser environment
 > support may be added later.
-
 > `cosmo` is built to easily develop libraries. If you are looking to develop
 > apps, it would still work fine. But there may be better options available
 > depending on the type of app you want to create.
@@ -100,9 +99,12 @@ yarn add --dev babel-preset-cosmo babel-plugin-transform-decorators-legacy @babe
 
 ### start ✅
 
-Start the development environment. It runs `src/index.js` and watches for
-changes. It re-runs automatically on source change. `babel` rules for `build`
-command apply here as well.
+Start the development environment. It runs `src/index.js`.
+
+`babel` rules for `build` command apply here as well.
+
+Options: </br>
+`-w --watch`: Watch for file changes and re-run automatically</br>
 
 ### test ✅
 
