@@ -106,7 +106,7 @@ const create = async argv => {
   initGit(rootDir)
   createPackageJson(packageJsonData, rootDir)
   installDependencies(rootDir, dependencies, devDependencies)
-  addFiles(rootDir, appName, userData)
+  addFiles(argv, rootDir, appName, userData)
 }
 
 module.exports = create

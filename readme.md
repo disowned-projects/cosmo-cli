@@ -52,9 +52,14 @@ Options:
 Create a new project. Initialize git, setup package.json, add default config
 and install dependencies
 
+We also create a `.vscode/settings.json` so tools work properly with vscode
+by default.
+
 Directory Structure:
 
 ```bash
+.vscode/
+  settings.json
 node_modules/
 src/
   index.js
@@ -69,6 +74,7 @@ LICENCE
 
 Options: </br>
 `-s, --skipQuestions`: Skip questions for user data</br>
+`--noCode`: Skip creating vscode settings
 
 ### build ✅
 

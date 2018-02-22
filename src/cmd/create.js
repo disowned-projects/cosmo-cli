@@ -11,6 +11,10 @@ exports.builder = yargs =>
       describe: 'Skip questions for user data',
       default: false,
     },
+    noCode: {
+      describe: 'Skip creating vscode settings',
+      default: false,
+    },
   })
 
 exports.handler = argv => {

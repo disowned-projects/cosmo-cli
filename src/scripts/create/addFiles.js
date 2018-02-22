@@ -145,11 +145,33 @@ all=true
 emoji=true
 `
 
-const addFiles = (rootDir, appName, userData) => {
+const vscodeConfig = `{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "files.eol": "\\n",
+  "files.encoding": "utf8",
+  "prettier.trailingComma": "all",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "javascript.validate.enable": false,
+  "flow.useNPMPackagedFlow": true,
+  "flow.runOnAllFiles": true,
+  "eslint.run": "onSave"
+}
+`
+
+const addFiles = (argv, rootDir, appName, userData) => {
   console.log(`Adding project files`)
   const originDir = process.cwd()
   process.chdir(rootDir)
 
+  if (!argv.noCode) {
+    fs.ensureFileSync(path.join(rootDir, '.vscode/settings.json'))
+    fs.writeFileSync(path.join(rootDir, '.vscode/settings.json'), vscodeConfig)
+  }
   fs.ensureFileSync(path.join(rootDir, 'src/index.js'))
   fs.writeFileSync(path.join(rootDir, 'src/index.js'), indexJs)
   fs.writeFileSync(path.join(rootDir, 'src/index.test.js'), indexTest)
