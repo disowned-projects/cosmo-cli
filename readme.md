@@ -166,3 +166,7 @@ yarn flowtyped install lodash@4.17.5
 Run precommit hooks. Before every commit, `format` and `lint` commands are run
 on the staged files. This way you never commit bad code. To add/remove more
 commands, modify `lint-satged` field in package.json.
+
+## License
+
+MIT © [Siddharth Doshi](https://sid.sh)
