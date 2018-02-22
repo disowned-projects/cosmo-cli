@@ -15,11 +15,15 @@ const setupPostInstall = (packagePath, devDependencies) => {
 
   packageWithDeps.devDependencies = packageWithDeps.devDependencies || {}
 
-  devDependencies.forEach(dep => {
-    const version = packageWithDeps.dependencies[dep]
-    delete packageWithDeps.dependencies[dep]
-    packageWithDeps.devDependencies[dep] = version
-  })
+  devDependencies
+    .map(dep => {
+      return dep.indexOf('@') > 1 ? dep.split('@')[0] : dep
+    })
+    .forEach(dep => {
+      const version = packageWithDeps.dependencies[dep]
+      delete packageWithDeps.dependencies[dep]
+      packageWithDeps.devDependencies[dep] = version
+    })
 
   packageWithDeps.scripts.prepublish = 'npm run build'
 
