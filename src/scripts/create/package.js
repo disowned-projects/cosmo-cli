@@ -19,6 +19,9 @@ module.exports = data => {
     'lint-staged': {
       '*.js': ['cosmo format -f', 'cosmo lint -f', 'git add'],
     },
+    eslintConfig: {
+      extends: 'cosmo',
+    },
   }
 
   if (data.authorEmail || data.authorUrl || data.authorName) {

@@ -177,6 +177,11 @@ const vscodeConfig = `{
 const travisYml = `language: node_js
 node_js:
  - '8'
+
+script:
+ - yarn lint
+ - yarn flow
+ - yarn test
 `
 
 const addFiles = (argv, rootDir, appName, userData) => {
