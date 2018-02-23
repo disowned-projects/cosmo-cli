@@ -16,7 +16,7 @@ const buildArgs = argv => {
     args.push('--watch')
   }
   if (process.env.CI || argv.ci) {
-    args.push('--ci')
+    args.push('--ci', '--coverage')
   }
   if (argv.notify) {
     args.push('--notify')
