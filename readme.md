@@ -37,6 +37,7 @@ Commands:
   cosmo create <projectPath>  Create a new project
   cosmo format                Format files using Prettier
   cosmo lint                  Code analysis using Eslint
+  cosmo release               Release to npm
   cosmo start                 Start the development environment
   cosmo test                  Run tests using Jest
 
