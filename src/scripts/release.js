@@ -1,4 +1,4 @@
-process.env.RELEASE = true
+process.env.CI = true
 
 const spawn = require('cross-spawn')
 const chalk = require('chalk')
@@ -20,7 +20,7 @@ const release = argv => {
       stdio: 'inherit',
     }
   )
-  if (releaseResult.status !== 0) {
+  if (releaseResult.status === 0) {
     console.log(chalk.green('Pushing to Github'))
     push()
     console.log('Done 🎉')

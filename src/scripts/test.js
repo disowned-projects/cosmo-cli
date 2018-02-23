@@ -11,12 +11,7 @@ const useDefaultConfig = !fs.existsSync(paths.jestConfig)
 
 const buildArgs = argv => {
   const args = []
-  if (
-    !process.env.CI &&
-    !process.env.RELEASE &&
-    !argv.coverage &&
-    !argv.noWatch
-  ) {
+  if (!process.env.CI && !argv.coverage && !argv.noWatch) {
     args.push('--watch')
   }
   if (process.env.CI || argv.ci) {
