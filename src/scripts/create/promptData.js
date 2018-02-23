@@ -30,14 +30,15 @@ const promptData = async (rootDir, appName, skipQuestions) => {
   })
   questions.push({
     name: 'authorUrl',
-    message: 'What is your personal site URL?',
+    message: 'What is your personal site URL (without https)?',
     validate: url => {
       if (!url) return true
       if (/^(http|https):\/\/+[\www\d]+\.[\w]+(\/[\w\d]+)?/.test(url)) {
         return true
       }
-      return 'Invalid URL. Make sure to provide the protocol.'
+      return `Invalid URL: ${url}`
     },
+    filter: url => `https://${url}`,
   })
   questions.push({
     name: 'authorEmail',
