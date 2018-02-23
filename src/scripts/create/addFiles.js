@@ -102,13 +102,24 @@ test('Should add as expected', () => {
 
 const readme = (userData, appName) => `# ${appName}
 
-> Description
+[![Build Status](https://travis-ci.org/${
+  userData.githubUsername
+}/${appName}.svg?branch=master)](https://travis-ci.org/${
+  userData.githubUsername
+}/${appName}) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/${
+  userData.githubUsername
+}/${appName}/issues) [![HitCount](http://hits.dwyl.io/${
+  userData.githubUsername
+}/${appName}.svg)](http://hits.dwyl.io/${
+  userData.githubUsername
+}/${appName}) [![npm](https://img.shields.io/npm/v/${appName}.svg)](https://www.npmjs.com/package/${appName}) [![npm](https://img.shields.io/npm/l/${appName}.svg)](https://www.npmjs.com/package/${appName})
 
+> Description
 
 ## Install
 
-\`\`\`
-$ npm install --save ${appName}
+\`\`\`bash
+npm install --save ${appName}
 \`\`\`
 
 ## Usage
@@ -163,6 +174,11 @@ const vscodeConfig = `{
 }
 `
 
+const travisYml = `language: node_js
+node_js:
+ - '8'
+`
+
 const addFiles = (argv, rootDir, appName, userData) => {
   console.log(`Adding project files`)
   const originDir = process.cwd()
@@ -179,6 +195,7 @@ const addFiles = (argv, rootDir, appName, userData) => {
   fs.writeFileSync(path.join(rootDir, '.gitignore'), gitignore)
   fs.writeFileSync(path.join(rootDir, 'readme.md'), readme(userData, appName))
   fs.writeFileSync(path.join(rootDir, '.flowconfig'), flowConfig)
+  fs.writeFileSync(path.join(rootDir, '.travis.yml'), travisYml)
   console.log(chalk.green('✅  Sucessfully Added files'))
 
   process.chdir(originDir)
