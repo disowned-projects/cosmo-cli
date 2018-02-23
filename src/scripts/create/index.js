@@ -57,6 +57,7 @@ const ensureSafeDir = rootDir => {
         'Please ensure that the directory is empty.'
       )
     )
+    process.exit(1)
   }
   console.log(chalk.green('✅  Project directory created succesfully'))
 }
