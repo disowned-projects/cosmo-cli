@@ -114,7 +114,7 @@ const readme = (userData, appName) => `# ${appName}
   userData.githubUsername
 }/${appName}) [![npm](https://img.shields.io/npm/v/${appName}.svg)](https://www.npmjs.com/package/${appName}) [![npm](https://img.shields.io/npm/l/${appName}.svg)](https://www.npmjs.com/package/${appName})
 
-> Description
+${userData.description && `> ${userData.description}`}
 
 ## Install
 
