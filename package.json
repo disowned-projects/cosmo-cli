@@ -33,6 +33,7 @@
     "jest": "^22.1.4",
     "nodemon": "^1.14.12",
     "prettier": "^1.10.2",
+    "publish-please": "^2.3.1",
     "rimraf": "^2.6.2",
     "validate-npm-package-name": "^3.0.0",
     "yargs": "^11.0.0"

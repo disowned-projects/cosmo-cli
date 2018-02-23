@@ -175,6 +175,16 @@ Run precommit hooks. Before every commit, `format` and `lint` commands are run
 on the staged files. This way you never commit bad code. To add/remove more
 commands, modify `lint-satged` field in package.json.
 
+### release ✅
+
+Release the package to npm using `publish-please`. This command will first
+build the project and do necessary checks before publishing to npm. It will
+also push to github once the release is sucessfull.
+
+Note that It expects you to bump the
+version before running this script. To bump the version, use `yarn version` or
+`npn version`.
+
 ## Contributing
 
 Clone the project and install dependencies.

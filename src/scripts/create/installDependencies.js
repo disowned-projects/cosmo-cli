@@ -9,7 +9,7 @@ const shouldUseYarn = () => {
   return true
 }
 
-// Shift devDependencies and add prepublish script
+// Shift devDependencies
 const setupPostInstall = (packagePath, devDependencies) => {
   const packageWithDeps = JSON.parse(fs.readFileSync(packagePath).toString())
 
@@ -24,8 +24,6 @@ const setupPostInstall = (packagePath, devDependencies) => {
       delete packageWithDeps.dependencies[dep]
       packageWithDeps.devDependencies[dep] = version
     })
-
-  packageWithDeps.scripts.prepublish = 'npm run build'
 
   fs.writeFileSync(packagePath, JSON.stringify(packageWithDeps, null, 2))
 }

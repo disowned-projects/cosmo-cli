@@ -10,6 +10,7 @@ module.exports = data => {
       start: 'cosmo start',
       format: 'cosmo format',
       lint: 'cosmo lint',
+      release: 'cosmo release',
       flow: 'flow',
       flowtyped: 'flow-typed',
       precommit: 'lint-staged',
