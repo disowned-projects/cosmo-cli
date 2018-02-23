@@ -183,7 +183,7 @@ also push to github once the release is sucessfull.
 
 Note that It expects you to bump the
 version before running this script. To bump the version, use `yarn version` or
-`npn version`.
+`npm version`.
 
 ## Contributing
 
