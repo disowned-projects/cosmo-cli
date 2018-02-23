@@ -42,7 +42,7 @@ const promptData = async (rootDir, appName, skipQuestions) => {
       }
       return `Invalid URL: ${url}`
     },
-    filter: url => `https://${url}`,
+    filter: url => (url ? `https://${url}` : ''),
   })
   questions.push({
     name: 'authorEmail',
