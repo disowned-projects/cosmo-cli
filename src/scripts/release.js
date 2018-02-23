@@ -1,5 +1,3 @@
-process.env.CI = true
-
 const spawn = require('cross-spawn')
 const chalk = require('chalk')
 
@@ -8,6 +6,7 @@ const push = () =>
   spawn.sync('git', ['push', 'origin', 'master'], { stdio: 'inherit' })
 
 const release = argv => {
+  process.env.CI = true
   const buildResult = build()
   buildResult.status !== 0 && process.exit(buildResult.status)
 
