@@ -12,6 +12,10 @@ const promptData = async (rootDir, appName, skipQuestions) => {
 
   const questions = []
   questions.push({
+    name: 'description',
+    message: 'Description:',
+  })
+  questions.push({
     name: 'githubUsername',
     message: 'What is your Github username?',
   })

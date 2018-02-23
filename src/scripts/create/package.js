@@ -1,6 +1,7 @@
 module.exports = data => {
   const packageJson = {
     name: data.name,
+    description: data.description || '',
     version: '1.0.0',
     main: 'dist/index.js',
     license: 'MIT',
