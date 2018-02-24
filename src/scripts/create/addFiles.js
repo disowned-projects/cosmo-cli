@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 const chalk = require('chalk')
+const camelCase = require('camelcase')
 
 const licence = name =>
   `MIT License
@@ -125,7 +126,7 @@ npm install --save ${appName}
 ## Usage
 
 \`\`\`js
-const ${appName} = require('${appName}')
+import ${camelCase(appName)} from '${appName}'
 \`\`\`
 
 ## License
