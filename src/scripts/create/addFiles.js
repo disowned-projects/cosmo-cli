@@ -164,7 +164,7 @@ const vscodeConfig = `{
   "editor.tabSize": 2,
   "files.eol": "\\n",
   "files.encoding": "utf8",
-  "prettier.trailingComma": "all",
+  "prettier.trailingComma": "es5",
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "javascript.validate.enable": false,
