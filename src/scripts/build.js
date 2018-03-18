@@ -24,6 +24,7 @@ const build = () => {
   const args = []
   args.push(paths.src)
   args.push('-d', paths.dist)
+  args.push('--ignore', '__tests__,__mocks__,**/*.test.js,**/*.spec.js')
   useDefaultConfig
     ? args.push('--presets', paths.defaultBabelConfig)
     : console.log(chalk.green('Using .babelrc from project root for config'))
