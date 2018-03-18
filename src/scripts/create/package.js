@@ -5,6 +5,7 @@ module.exports = data => {
     version: '1.0.0',
     main: 'dist/index.js',
     license: 'MIT',
+    files: ['dist/']
     scripts: {
       build: 'cosmo build',
       test: 'cosmo test',
