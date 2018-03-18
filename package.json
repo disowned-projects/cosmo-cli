@@ -1,6 +1,6 @@
 {
   "name": "cosmo-cli",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Qucik Javascript Tooling",
   "main": "src/index.js",
   "bin": {
